@@ -1,45 +1,60 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/custom_drawer_widget.dart';
+import '../../widgets/custom_drawer_widget.dart';
 
-class ApprovedScreen extends StatefulWidget {
+class EmployeeRejectedScreen extends StatefulWidget {
   @override
-  _ApprovedScreenState createState() => _ApprovedScreenState();
+  _EmployeeRejectedScreenState createState() => _EmployeeRejectedScreenState();
 }
 
-class _ApprovedScreenState extends State<ApprovedScreen> {
+class _EmployeeRejectedScreenState extends State<EmployeeRejectedScreen> {
   final List<Map<String, String>> employees = [
     {
       "name": "Shaidul Islam",
       "role": "Designer",
-      "status": "P",
-      "time": "2h 20m",
-    },
-    {
-      "name": "Ibne Riead",
-      "role": "Designer",
-      "status": "A",
-      "time": "On time",
+      "status": "R",
+      "time": "09:00 AM - 05:00 PM",
     },
     {
       "name": "Mehedii Mohammad",
       "role": "Designer",
-      "status": "H/D",
-      "time": "3h 32m",
+      "status": "R",
+      "time": "09:00 AM - 05:30 PM",
     },
     {
-      "name": "Emily",
+      "name": "Ibne Riead",
       "role": "Designer",
-      "status": "H",
-      "time": "On time",
+      "status": "R",
+      "time": "00:00 AM - 00:00 PM",
+    },
+    {
+      "name": "Mehedii Mohammad",
+      "role": "Designer",
+      "status": "R",
+      "time": "09:00 AM - 05:30 PM",
+    },
+    {
+      "name": "Ibne Riead",
+      "role": "Designer",
+      "status": "R",
+      "time": "00:00 AM - 00:00 PM",
+    },
+    {
+      "name": "Mehedii Mohammad",
+      "role": "Designer",
+      "status": "R",
+      "time": "09:00 AM - 05:30 PM",
+    },
+    {
+      "name": "Ibne Riead",
+      "role": "Designer",
+      "status": "R",
+      "time": "00:00 AM - 00:00 PM",
     },
   ];
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       drawer: CustomDrawer(),
       appBar: PreferredSize(
@@ -52,12 +67,10 @@ class _ApprovedScreenState extends State<ApprovedScreen> {
           ),
           title: const Padding(
             padding: EdgeInsets.only(top: 13),
-            child: Text(
-              "Approved",
-              style: TextStyle(color: Colors.white),
-            ),
+            child: Text("Rejected Requests",
+                style: TextStyle(color: Colors.white)),
           ),
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: Colors.blue,
           centerTitle: true,
           toolbarHeight: 80.0,
           leading: Builder(
@@ -98,7 +111,7 @@ class _ApprovedScreenState extends State<ApprovedScreen> {
           children: [
             Row(
               children: [
-                const CircleAvatar(backgroundColor: Colors.blueAccent),
+                const CircleAvatar(backgroundColor: Colors.blue),
                 const SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,40 +133,41 @@ class _ApprovedScreenState extends State<ApprovedScreen> {
                 color: Colors.grey[100],
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: const Column(
+              child: Column(
                 children: [
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("Date",
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                      Text("            In Time",
+                      Text("In Time",
                           style: TextStyle(fontWeight: FontWeight.bold)),
                       Text("Out Time",
                           style: TextStyle(fontWeight: FontWeight.bold)),
                     ],
                   ),
-                  SizedBox(height: 5),
-                  Divider(color: Colors.black, thickness: 0.5),
+                  const SizedBox(height: 5),
+                  const Divider(color: Colors.black, thickness: 0.5),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("17 Aug 2021"),
-                      Text("09:00 AM"),
-                      Text("05:00 PM"),
+                      const Text("17 Aug 2021"),
+                      Text(employee["time"]!.split(" - ")[0]),
+                      Text(employee["time"]!.split(" - ")[1]),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Row(
+                    children: [
+                      Icon(Icons.cancel, color: Colors.red),
+                      SizedBox(width: 5),
+                      Text("Rejected"),
                     ],
                   ),
                 ],
               ),
-            ),
-            const SizedBox(height: 10),
-            const Row(
-              children: [
-                Icon(Icons.check_circle, color: Colors.green),
-                SizedBox(width: 5),
-                Text("Approved"),
-                Spacer(),
-              ],
             ),
           ],
         ),

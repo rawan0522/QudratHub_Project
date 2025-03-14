@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:project/Component/BottomNavItem.dart';
 import 'package:project/Providers/Registration_Provider.dart';
 import 'package:project/buttons.dart';
-import 'package:project/company/Employee/AccountPage.dart';
-import 'package:project/company/Employee/ChatsPage.dart';
-import 'package:project/company/Employee/HomePage/HomePage.dart';
-import 'package:project/company/Employee/MyApplicationsPage.dart';
-import 'package:project/company/Employee/NotificationsPage.dart';
-import 'package:project/screens/signin_screen.dart';
+import 'package:project/screens/Company/signin_screen.dart';
+import 'package:project/screens/Employee/AccountPage.dart';
+import 'package:project/screens/Employee/ChatsPage.dart';
+import 'package:project/screens/Employee/HomePage/HomePage.dart';
+import 'package:project/screens/Employee/MyApplicationsPage.dart';
+import 'package:project/screens/Employee/NotificationsPage.dart';
 import 'package:provider/provider.dart';
-import 'screens/home_screen.dart';
+import 'screens/Company/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Buttons(),
+        home: SelectionPage(),
       ),
     );
   }

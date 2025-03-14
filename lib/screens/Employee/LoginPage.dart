@@ -1,9 +1,9 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:project/company/Employee/ForgetPassword.dart';
-import 'package:project/company/Employee/SignUpPage.dart';
 import 'package:project/main.dart';
+import 'package:project/screens/Employee/ForgetPassword.dart';
+import 'package:project/screens/Employee/SignUpPage.dart';
 class Signin extends StatefulWidget {
   const Signin({super.key});
 

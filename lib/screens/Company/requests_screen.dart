@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/custom_drawer_widget.dart';
+import '../../widgets/custom_drawer_widget.dart';
 
-class EmployeePendingScreen extends StatefulWidget {
-  const EmployeePendingScreen({super.key});
+class EmployeeAttendanceScreen extends StatefulWidget {
+  const EmployeeAttendanceScreen({super.key});
 
   @override
-  _EmployeePendingScreenState createState() => _EmployeePendingScreenState();
+  _EmployeeAttendanceScreenState createState() =>
+      _EmployeeAttendanceScreenState();
 }
 
-class _EmployeePendingScreenState extends State<EmployeePendingScreen> {
+class _EmployeeAttendanceScreenState extends State<EmployeeAttendanceScreen> {
   final List<Map<String, String>> employees = [
     {
       "name": "Shaidul Islam",
@@ -20,13 +21,37 @@ class _EmployeePendingScreenState extends State<EmployeePendingScreen> {
     {
       "name": "Mehedii Mohammad",
       "role": "Designer",
-      "status": "P",
+      "status": "H/D",
       "time": "09:00 AM - 05:30 PM",
     },
     {
       "name": "Ibne Riead",
       "role": "Designer",
-      "status": "P",
+      "status": "A",
+      "time": "00:00 AM - 00:00 PM",
+    },
+    {
+      "name": "Mehedii Mohammad",
+      "role": "Designer",
+      "status": "H/D",
+      "time": "09:00 AM - 05:30 PM",
+    },
+    {
+      "name": "Ibne Riead",
+      "role": "Designer",
+      "status": "A",
+      "time": "00:00 AM - 00:00 PM",
+    },
+    {
+      "name": "Mehedii Mohammad",
+      "role": "Designer",
+      "status": "H/D",
+      "time": "09:00 AM - 05:30 PM",
+    },
+    {
+      "name": "Ibne Riead",
+      "role": "Designer",
+      "status": "A",
       "time": "00:00 AM - 00:00 PM",
     },
   ];
@@ -45,10 +70,12 @@ class _EmployeePendingScreenState extends State<EmployeePendingScreen> {
           ),
           title: const Padding(
             padding: EdgeInsets.only(top: 13),
-            child:
-                Text("Pending Requests", style: TextStyle(color: Colors.white)),
+            child: Text(
+              "Requests",
+              style: TextStyle(color: Colors.white),
+            ),
           ),
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.blueAccent,
           centerTitle: true,
           toolbarHeight: 80.0,
           leading: Builder(
@@ -65,6 +92,15 @@ class _EmployeePendingScreenState extends State<EmployeePendingScreen> {
       ),
       body: Column(
         children: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _buildTabButton("Request (4)", true),
+              ],
+            ),
+          ),
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.all(10),
@@ -79,6 +115,26 @@ class _EmployeePendingScreenState extends State<EmployeePendingScreen> {
     );
   }
 
+  Widget _buildTabButton(String text, bool selected) {
+    return Expanded(
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 5),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: selected ? Colors.blueAccent : Colors.grey[300],
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          ),
+          onPressed: () {},
+          child: Text(
+            text,
+            style: TextStyle(color: selected ? Colors.white : Colors.black),
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget _buildEmployeeCard(Map<String, String> employee) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
@@ -89,7 +145,7 @@ class _EmployeePendingScreenState extends State<EmployeePendingScreen> {
           children: [
             Row(
               children: [
-                const CircleAvatar(backgroundColor: Colors.blue),
+                const CircleAvatar(backgroundColor: Colors.blueAccent),
                 const SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,18 +190,34 @@ class _EmployeePendingScreenState extends State<EmployeePendingScreen> {
                       Text(employee["time"]!.split(" - ")[1]),
                     ],
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Row(
-                    children: [
-                      Icon(Icons.hourglass_empty, color: Colors.orange),
-                      SizedBox(width: 5),
-                      Text("Pending"),
-                    ],
-                  ),
                 ],
               ),
+            ),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF4C84FF),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8)),
+                  ),
+                  onPressed: () {},
+                  child: const Text("Approve",
+                      style: TextStyle(color: Colors.white)),
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: const Color(0xFFFFF5EE),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8)),
+                  ),
+                  onPressed: () {},
+                  child: const Text("Reject",
+                      style: TextStyle(color: Color(0xFFFFA26B))),
+                ),
+              ],
             ),
           ],
         ),

@@ -3,7 +3,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:project/Providers/Registration_Provider.dart';
 import 'dart:io';
 import 'package:provider/provider.dart';
-import 'package:project/screens/signin_screen.dart';
+import 'package:project/screens/Company/signin_screen.dart';
 
 class SignUpPage extends StatefulWidget {
   @override

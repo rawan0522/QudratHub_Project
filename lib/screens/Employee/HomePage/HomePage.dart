@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project/company/Employee/HomePage/AdvicePage.dart';
-import 'package:project/company/Employee/HomePage/EventDetailsPage.dart';
-import 'package:project/company/Employee/HomePage/EventsSection.dart';
-import 'package:project/company/Employee/JobListingPage.dart';
+import 'package:project/screens/Employee/HomePage/AdvicePage.dart';
+import 'package:project/screens/Employee/HomePage/EventDetailsPage.dart';
+import 'package:project/screens/Employee/HomePage/EventsSection.dart';
+import 'package:project/screens/Employee/JobListingPage.dart';
 import '../../../Component/JobCard.dart';
 import '../../../Component/JobLists.dart';
 import 'JobDetails.dart';

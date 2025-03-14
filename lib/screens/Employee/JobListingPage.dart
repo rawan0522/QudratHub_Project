@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project/company/Employee/HomePage/JobDetails.dart';
-
+import 'package:project/screens/Employee/HomePage/JobDetails.dart';
 import '../../Component/JobCard.dart';
 import '../../Component/JobLists.dart';
 

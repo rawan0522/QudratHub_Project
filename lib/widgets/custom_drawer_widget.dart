@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:project/screens/company_profile_screen.dart';
-import 'package:project/screens/logout_screen.dart';
+import 'package:project/screens/Company/company_profile_screen.dart';
+import 'package:project/screens/Company/logout_screen.dart';
 
-import '../screens/approved_screen.dart';
-import '../screens/home_screen.dart';
-import '../screens/requests_screen.dart';
+import '../screens/Company/approved_screen.dart';
+import '../screens/Company/home_screen.dart';
+import '../screens/Company/requests_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override

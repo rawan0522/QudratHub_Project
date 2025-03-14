@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:project/company/Employee/ApplicationDetails.dart';
+import 'package:project/screens/Employee/ApplicationDetails.dart';
 class ApplicationsPage extends StatelessWidget {
   final List<Map<String, String>> applications = [
     {

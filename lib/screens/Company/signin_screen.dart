@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project/Providers/Registration_Provider.dart';
-import 'package:project/screens/home_screen.dart';
-import 'package:project/screens/signup_screen.dart';
+import 'package:project/screens/Company/home_screen.dart';
+import 'package:project/screens/Company/signup_screen.dart';
 import 'package:provider/provider.dart';
 class SignInPage extends StatefulWidget {
   @override

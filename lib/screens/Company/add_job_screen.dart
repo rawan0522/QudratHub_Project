@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/custom_drawer_widget.dart';
+import '../../widgets/custom_drawer_widget.dart';
 
 class AddJobScreen extends StatefulWidget {
   const AddJobScreen({super.key});

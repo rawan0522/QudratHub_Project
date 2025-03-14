@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:project/screens/add_job_screen.dart';
-import 'package:project/screens/approved_screen.dart';
-import 'package:project/screens/job_list_screen.dart';
-import 'package:project/screens/pending_screen.dart';
-import 'package:project/screens/rejected_screen.dart';
-import 'package:project/screens/requests_screen.dart';
+import 'package:project/screens/Company/add_job_screen.dart';
+import 'package:project/screens/Company/approved_screen.dart';
+import 'package:project/screens/Company/job_list_screen.dart';
+import 'package:project/screens/Company/pending_screen.dart';
+import 'package:project/screens/Company/rejected_screen.dart';
+import 'package:project/screens/Company/requests_screen.dart';
 
 
-import '../widgets/custom_drawer_widget.dart';
+import '../../widgets/custom_drawer_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

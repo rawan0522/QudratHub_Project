@@ -1,54 +1,32 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/custom_drawer_widget.dart';
+import '../../widgets/custom_drawer_widget.dart';
 
-class EmployeeRejectedScreen extends StatefulWidget {
+class EmployeePendingScreen extends StatefulWidget {
+  const EmployeePendingScreen({super.key});
+
   @override
-  _EmployeeRejectedScreenState createState() => _EmployeeRejectedScreenState();
+  _EmployeePendingScreenState createState() => _EmployeePendingScreenState();
 }
 
-class _EmployeeRejectedScreenState extends State<EmployeeRejectedScreen> {
+class _EmployeePendingScreenState extends State<EmployeePendingScreen> {
   final List<Map<String, String>> employees = [
     {
       "name": "Shaidul Islam",
       "role": "Designer",
-      "status": "R",
+      "status": "P",
       "time": "09:00 AM - 05:00 PM",
     },
     {
       "name": "Mehedii Mohammad",
       "role": "Designer",
-      "status": "R",
+      "status": "P",
       "time": "09:00 AM - 05:30 PM",
     },
     {
       "name": "Ibne Riead",
       "role": "Designer",
-      "status": "R",
-      "time": "00:00 AM - 00:00 PM",
-    },
-    {
-      "name": "Mehedii Mohammad",
-      "role": "Designer",
-      "status": "R",
-      "time": "09:00 AM - 05:30 PM",
-    },
-    {
-      "name": "Ibne Riead",
-      "role": "Designer",
-      "status": "R",
-      "time": "00:00 AM - 00:00 PM",
-    },
-    {
-      "name": "Mehedii Mohammad",
-      "role": "Designer",
-      "status": "R",
-      "time": "09:00 AM - 05:30 PM",
-    },
-    {
-      "name": "Ibne Riead",
-      "role": "Designer",
-      "status": "R",
+      "status": "P",
       "time": "00:00 AM - 00:00 PM",
     },
   ];
@@ -67,8 +45,8 @@ class _EmployeeRejectedScreenState extends State<EmployeeRejectedScreen> {
           ),
           title: const Padding(
             padding: EdgeInsets.only(top: 13),
-            child: Text("Rejected Requests",
-                style: TextStyle(color: Colors.white)),
+            child:
+                Text("Pending Requests", style: TextStyle(color: Colors.white)),
           ),
           backgroundColor: Colors.blue,
           centerTitle: true,
@@ -157,13 +135,13 @@ class _EmployeeRejectedScreenState extends State<EmployeeRejectedScreen> {
                     ],
                   ),
                   const SizedBox(
-                    height: 15,
+                    height: 10,
                   ),
                   const Row(
                     children: [
-                      Icon(Icons.cancel, color: Colors.red),
+                      Icon(Icons.hourglass_empty, color: Colors.orange),
                       SizedBox(width: 5),
-                      Text("Rejected"),
+                      Text("Pending"),
                     ],
                   ),
                 ],

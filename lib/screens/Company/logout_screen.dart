@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:project/screens/signin_screen.dart';
+import 'package:project/screens/Company/signin_screen.dart';
 
 class JobHomePage extends StatelessWidget {
   const JobHomePage({Key? key}) : super(key: key);
